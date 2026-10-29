@@ -1,4 +1,4 @@
----
+﻿---
 name: sf-live-org-capture
 description: >-
   Strictly read-only fast headless Chrome CDP live-org screenshot capture for Salesforce Lightning pages, tabs, and
@@ -8,11 +8,11 @@ description: >-
 
 # Salesforce Live Org Screenshot Capture (`sf-live-org-capture`)
 
-Captures production-accurate 1600×1000 screenshots directly from an authenticated Salesforce org in ~4–7 seconds using Headless Chrome DevTools Protocol (CDP) and `sf org open --url-only`.
+Captures production-accurate 1600Ã—1000 screenshots directly from an authenticated Salesforce org in ~4â€“7 seconds using Headless Chrome DevTools Protocol (CDP) and `sf org open --url-only`.
 
 ---
 
-## ⛔ STRICT READ-ONLY POLICY & BOUNDARIES
+## â›” STRICT READ-ONLY POLICY & BOUNDARIES
 
 **This skill is strictly limited to observation, inspection, and screenshot capture.**
 
@@ -37,7 +37,7 @@ When using or invoked via `/sf-live-org-capture`:
 
 ## Resolving the Target URL / Path
 
-Determine the target Lightning URL or path in this order (do **not** ask the user if steps 1–3 resolve it):
+Determine the target Lightning URL or path in this order (do **not** ask the user if steps 1â€“3 resolve it):
 1. **User-Provided URL or Path**: If the user shared a full URL (`https://...lightning.force.com/lightning/...`) or relative path (`/lightning/...`), pass it via `--url` (this also updates the workspace cache).
 2. **Cached Workspace Target**: If `--url` is omitted, `capture_sf.js` automatically reuses the last URL and `--wait-for` selector saved for the current workspace directory in `workspace_targets.json`.
 3. **Workspace Metadata Discovery (Read-Only)**: On first use in a workspace, inspect `force-app/main/default/flexipages/*.flexipage-meta.xml` and `force-app/main/default/tabs/*.tab-meta.xml` in read-only mode to see which tab or page hosts the LWC being inspected (e.g., `/lightning/n/<Tab_DeveloperName>`).
